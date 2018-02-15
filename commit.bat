@@ -4,7 +4,15 @@ set commitMessage=%1
 
 call git add -A
 call git commit -m %1
-call git push
 
+setlocal
+
+set /P yesOrNo=Would you like to try and push (Y/N)?
+IF %yesOrNo%==Y	(
+	call git push
+) ELSE (
+	echo changes were left commited but not pushed.
+)
+endlocal
 
 
