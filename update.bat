@@ -1,19 +1,15 @@
 @echo off
 
-REM ss64.com/nt
-REM git-scm.com
-
-REM For the updater (different document) I want the user to write:
-REM (update) to pull commits from the remote repository and merge them into the local
-REM if their local is not committed then this tool cannot update unless they commit or revert the merge focuses on "theirs"
-
-REM this should get commits and merge them (test at home).
-REM figure out how to check if they have commit problems and solve it according to guidelines.
-
-REM test#4
-
-call git fetch --all
-call git merge -X theirs
+setlocal
+echo If you choose to do this and have conflicting files it will prioritize theirs. 
+set /P yesOrNo=Are you sure you want to do this(Y/N)?
+IF %yesOrNo%==Y	(
+	call git feth --all
+	call git merge -X theirs
+) ELSE (
+	echo update cancelled. If you have any conflicting files be sure to fix them.
+)
+endlocal
 
 
 
