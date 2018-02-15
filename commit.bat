@@ -8,7 +8,7 @@ call git commit -m %1
 setlocal
 
 set /P yesOrNo=Would you like to try and push (Y/N)?
-IF %yesOrNo%==Y || %yesOrNo%==y	(
+IF %yesOrNo%==Y OR IF %yesOrNo%==y	(
 	call git push
 ) ELSE (
 	echo changes were left commited but not pushed.
