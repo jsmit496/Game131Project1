@@ -8,6 +8,7 @@ set display2=%4
 REM basic get repository and pull branches. (initialize repository <repository>)
 If %1==repository (
 	call git clone %1
+	cd Game131Project1
 	call git fetch --all
 	call git pull --all
 	call git branch Development
