@@ -18,9 +18,11 @@ IF %yesOrNo%==y (
 ) 
 IF %yesOrNo%==N (
 	echo changes were left commited but not pushed.
+	GOTO ending
 )
 IF %yesOrNo%==n (
 	echo changes were left commited but not pushed.
+	GOTO ending
 )
 
 :ending
