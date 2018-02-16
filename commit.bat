@@ -12,7 +12,14 @@ IF %yesOrNo%==Y (
 	call git push
 	GOTO ending
 ) 
-IF %yesOrNo%==N OR IF %yesOrNo%==n (
+IF %yesOrNo%==y (
+	call git push
+	GOTO ending
+) 
+IF %yesOrNo%==N (
+	echo changes were left commited but not pushed.
+)
+IF %yesOrNo%==n (
 	echo changes were left commited but not pushed.
 )
 
