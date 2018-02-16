@@ -8,7 +8,7 @@ call git commit -m %1
 setlocal
 
 set /P yesOrNo=Would you like to try and push (Y/[N])?
-IF %yesOrNo%==Y OR IF %yesOrNo%==y	(
+IF %yesOrNo%==Y (
 	call git push
 	GOTO ending
 ) 
