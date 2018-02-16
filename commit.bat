@@ -11,7 +11,8 @@ set /P yesOrNo=Would you like to try and push (Y/[N])?
 IF %yesOrNo%==Y OR IF %yesOrNo%==y	(
 	call git push
 	GOTO ending
-) ELSE IF %yesOrNo%==N OR IF %yesOrNo%==n (
+) 
+IF %yesOrNo%==N OR IF %yesOrNo%==n (
 	echo changes were left commited but not pushed.
 )
 
